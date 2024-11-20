@@ -1,8 +1,5 @@
-<select #category name="categories" [(ngModel)]="selectedCategory" (change)="onCategoryChange(category.value)"
-    style="margin-right: 10px;">
-    @for (category of categoriesState.categories(); track category;) {
+<select #category name="categories" [(ngModel)]="selectedCategory" style="margin-right: 10px;">
+    @for (category of categoriesState.categories; track category;) {
     <option [value]="category.name">{{ category.name }}</option>
     }
 </select>
-<button (click)="onGo()">go</button>
-<router-outlet></router-outlet>

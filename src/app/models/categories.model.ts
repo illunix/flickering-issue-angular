@@ -1,18 +1,18 @@
 export interface Category {
-    name: string;
+  name: string;
 }
 
-export type GetCategoriesStatus = 'pending' | 'getting' | 'success' | 'error';
-
 export interface CategoriesState {
-  getCategoriesStatus: GetCategoriesStatus;
   categories: Category[];
   currentCategory: Category | undefined;
 }
 
 export const categoriesInitialState: CategoriesState = {
-  getCategoriesStatus: 'pending',
-  categories: [],
-  currentCategory: undefined,
+  categories: [
+    { name: 'All categories' },
+    { name: 'Fruits' },
+    { name: 'Vegetables' },
+    { name: 'Meat' },
+  ],
+  currentCategory: { name: 'Fruits' },
 };
-
