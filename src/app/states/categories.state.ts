@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, makeStateKey } from '@angular/core';
+import { inject } from '@angular/core';
 import { createInjectable } from 'ngxtension/create-injectable';
 import { signalSlice } from 'ngxtension/signal-slice';
 import {
@@ -12,8 +12,6 @@ import {
   Subject,
 } from 'rxjs';
 import { categoriesInitialState, Category } from '../models/categories.model';
-
-export const categoriesKey = makeStateKey<Category[]>('categories');
 
 export const CategoriesState = createInjectable(() => {
   const httpClient = inject(HttpClient);
